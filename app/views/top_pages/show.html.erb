@@ -1,1 +1,42 @@
 <h1>アラームアプリ</h1>
+
+<textarea id="text">
+アイウエオ
+</textarea>
+<button id="speak-btn">再生</button>
+<button id="continuous-btn">連続再生</button>
+<button id="cancel-btn">停止</button>
+<button id="pause-btn">一時停止</button>
+<button id="resume-btn">再開</button>
+
+
+<script>
+  const text      = document.querySelector('#text')
+  const speakBtn  = document.querySelector('#speak-btn')
+  const continuousBtn  = document.querySelector('#continuous-btn')
+  const cancelBtn = document.querySelector('#cancel-btn')
+  const pauseBtn  = document.querySelector('#pause-btn')
+  const resumeBtn = document.querySelector('#resume-btn')
+
+  speakBtn.addEventListener('click', function() {
+    const uttr = new SpeechSynthesisUtterance(text.value)
+    speechSynthesis.speak(uttr)
+  })
+  continuousBtn.addEventListener('click', function() {
+    let n=0
+    while (n<3) {
+      const uttr = new SpeechSynthesisUtterance(text.value)
+      speechSynthesis.speak(uttr)
+      n++;
+    }
+  })
+  cancelBtn.addEventListener('click', function() {
+    speechSynthesis.cancel()
+  })
+  pauseBtn.addEventListener('click', function() {
+    speechSynthesis.pause()
+  })
+  resumeBtn.addEventListener('click', function() {
+    speechSynthesis.resume()
+  })
+</script>
