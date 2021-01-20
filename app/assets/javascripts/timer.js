@@ -1,15 +1,4 @@
 $(function () {
-  $('.js-speak-btn').on('click', function () {
-      var speakContent = new SpeechSynthesisUtterance('あいうえお');
-      var speak = function(){
-        speechSynthesis.speak(speakContent);
-      };
-      var timeoutID;
-      timeoutID = setTimeout(speak, 3);
-  });
-});
-
-$(function () {
   $('.js-create-alarm-btn').on('click', function () {
       var speakContent = new SpeechSynthesisUtterance('あいうえお');
       var inputAlarmTimeStr = document.getElementById("alarmTime").value;
@@ -27,6 +16,5 @@ $(function () {
       };
       var timeoutID;
       timeoutID = setTimeout(speak, restTime*1000);
-      
   });
 });
