@@ -3,6 +3,4 @@ Rails.application.routes.draw do
   namespace :api do
     resources :alarms, only: %i[create]
   end
-
-  resource :atcoder, only: %i[show]
 end
