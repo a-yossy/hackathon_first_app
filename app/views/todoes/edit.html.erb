@@ -1,0 +1,9 @@
+<%= form_tag("/todoes/#{@todo.id}/update") do %>
+  <%= label_tag :Todo %>
+  <%= text_field_tag :content, @todo.content %>
+
+  <%= label_tag :メモ %>
+  <%= text_area_tag :memo, @todo.memo %>
+
+  <%= submit_tag "更新" %>
+<% end %>

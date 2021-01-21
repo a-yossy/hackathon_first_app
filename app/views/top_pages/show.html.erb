@@ -1,3 +1,7 @@
+<%= link_to "Todoリスト一覧", todoes_path %>
+
+<%= link_to "Todoリストを作成する", new_todo_path %>
+
 <% if @user %>
   User:<%= @user %>
   <%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
