@@ -1,0 +1,9 @@
+<%= form_tag('/todoes', method: :post) do %>
+  <%= label_tag :Todo %>
+  <%= text_field_tag :content %>
+
+  <%= label_tag :メモ %>
+  <%= text_area_tag :memo %>
+
+  <%= submit_tag "作成" %>
+<% end %>
