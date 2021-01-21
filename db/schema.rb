@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210120131756) do
+ActiveRecord::Schema.define(version: 20210121090645) do
 
   create_table "alarms", force: :cascade do |t|
     t.datetime "get_up_time", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20210120131756) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "memo"
   end
 
 end

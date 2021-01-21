@@ -1,0 +1,5 @@
+Todoリスト一覧
+
+<% @todoes.each do |todo| %>
+  <%= link_to todo.content, todo_path(todo.id) %>
+<% end %>
