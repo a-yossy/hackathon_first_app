@@ -1,5 +1,7 @@
-Todoリスト一覧
-
-<% @todoes.each do |todo| %>
-  <%= link_to todo.content, todo_path(todo.id) %>
-<% end %>
+<ul class="users">
+  <% @todoes.each do |todo| %>
+    <li>
+      <%= link_to todo.content, todo_path(todo.id) %>
+    </li>
+  <% end %>
+</ul>
