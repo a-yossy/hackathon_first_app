@@ -1,9 +1,16 @@
-<%= form_tag('/todoes', method: :post) do %>
-  <%= label_tag :Todo %>
-  <%= text_field_tag :content %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="micropost_form">
+      <%= form_tag('/todoes', method: :post) do %>
+      <div class="field">
+        <%= label_tag :Todo %>
+        <%= text_field_tag :content %>
 
-  <%= label_tag :メモ %>
-  <%= text_area_tag :memo %>
-
-  <%= submit_tag "作成" %>
-<% end %>
+        <%= label_tag :メモ %>
+        <%= text_area_tag :memo %>
+      </div>
+      <%= submit_tag "作成" %>
+    <% end %>
+    </section>
+  </aside>
+</div>

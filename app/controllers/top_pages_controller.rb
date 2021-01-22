@@ -18,7 +18,7 @@ class TopPagesController < ApplicationController
       @results.each do |result|
         if number < result["epoch_second"]
           number = result["epoch_second"]
-          @problem = result
+          @problem = Time.at(result["epoch_second"])
         end
       end
     end
