@@ -1,5 +1,19 @@
 $(function () {
-  $('.js-create-alarm-btn').on('click', function () {
+  $('.js-alarm-btn').on('click', function () {
+    if($('.js-alarm-btn').hasClass('on')){
+      var cookies = document.cookie; 
+      var cookiesArray = cookies.split(';'); 
+      var timeoutID;
+      for(var c of cookiesArray){ 
+          var cArray = c.split('='); 
+          if( cArray[0] == 'timeoutID'){ 
+              console.log(cArray); 
+          }
+      }
+      console.log(cookiesArray);
+      clearTimeout(timeoutID);
+      $('.js-alarm-btn').text('アラームを解除する');
+    }else{
       var speakContent = new SpeechSynthesisUtterance('あいうえお');
       var inputAlarmTimeStr = document.getElementById("alarmTime").value;
       var alarmTime = Number(inputAlarmTimeStr.slice(0, 2)) * 3600 + Number(inputAlarmTimeStr.slice(-2)) * 60;
@@ -16,5 +30,9 @@ $(function () {
       };
       var timeoutID;
       timeoutID = setTimeout(speak, restTime*1000);
+      document.cookie = 'timeID=' + encodeURIComponent(timeoutID);
+      $('.js-alarm-btn').text('アラームを登録する');
+    }
+    $('.js-alarm-btn').toggleClass('on');
   });
 });
