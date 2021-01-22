@@ -4,15 +4,14 @@ $(function () {
       var cookies = document.cookie; 
       var cookiesArray = cookies.split(';'); 
       var timeoutID;
-      for(var c of cookiesArray){ 
-          var cArray = c.split('='); 
-          if( cArray[0] == 'timeoutID'){ 
-              console.log(cArray); 
+      for(var for_cookie of cookiesArray){ 
+          var split_cookie = for_cookie.split('=');
+          if (split_cookie[0] === 'timeoutID') {
+            timeoutID = split_cookie[1];
           }
       }
-      console.log(cookiesArray);
       clearTimeout(timeoutID);
-      $('.js-alarm-btn').text('アラームを解除する');
+      $('.js-alarm-btn').text('アラームを登録する');
     }else{
       var speakContent = new SpeechSynthesisUtterance('あいうえお');
       var inputAlarmTimeStr = document.getElementById("alarmTime").value;
@@ -26,12 +25,16 @@ $(function () {
         restTime = (24*3600 + alarmTime -currentTime)
       }
       var speak = function(){
-        speechSynthesis.speak(speakContent);
+        var number = 0;
+        while (number < 100) {
+          speechSynthesis.speak(speakContent);
+          number++;
+        }
       };
       var timeoutID;
       timeoutID = setTimeout(speak, restTime*1000);
-      document.cookie = 'timeID=' + encodeURIComponent(timeoutID);
-      $('.js-alarm-btn').text('アラームを登録する');
+      document.cookie = 'timeoutID=' + encodeURIComponent(timeoutID);
+      $('.js-alarm-btn').text('アラームを解除する');
     }
     $('.js-alarm-btn').toggleClass('on');
   });
