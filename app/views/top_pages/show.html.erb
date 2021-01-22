@@ -1,25 +1,22 @@
-<%= link_to "Todoリスト一覧", todoes_path %>
-
-<%= link_to "Todoリストを作成する", new_todo_path %>
-
-<% if @user %>
-  User:<%= @user %>
-  <%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
-  
-<% else %>
-  <%= form_for(:session, url: login_path) do |f| %>
-
-    <%= f.label :user %>
-    <%= f.text_field :user %>
-
-    <%= f.submit "ユーザーを登録する" %>
-  <% end %>
-<% end %>
-
-<form>
-  <label for="startTime">起床時刻: </label>
-  <input type="time" id="alarmTime">
-</form>
-<button class='js-create-alarm-btn'>アラームを登録する</button>
-
+<div class="row">
+  <aside class="col-md-4">
+    <section class="micropost_form">
+      <% if @user %>
+        <h5>
+          User:<%= @user %>
+          <%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
+        </h5>
+      <% else %>
+        <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.text_field :user %>
+          <%= f.submit "ユーザーを登録する" %>
+        <% end %>
+      <% end %>
+      
+      <label for="startTime">起床時刻: </label>
+      <input type="time" id="alarmTime">
+      <button class='js-create-alarm-btn'>アラームを登録する</button>
+    </section>
+  </aside>
+</div>
 <%= @problem %>

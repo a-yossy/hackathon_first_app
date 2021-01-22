@@ -1,7 +1,10 @@
-Todo:<%= @todo.content %>
-
+<h3>
+  Todo: <%= @todo.content %>
+</h3>
 <% if !@todo.memo.blank? %>
-  メモ:<%= @todo.memo %>
+  <h4>
+    メモ: <%= @todo.memo %>
+  </h4>
 <% end %>
 
 <%= link_to "編集", edit_todo_path(@todo.id) %>
