@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'font_awesome5_webfont';
+@import 'font_awesome5.css';
 
 /* mixins, variables, etc. */
 
@@ -10,6 +12,9 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
+/* font-awesome*/
+
 
 /* universal */
 
