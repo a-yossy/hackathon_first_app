@@ -1,7 +1,7 @@
-<ul class="users">
+<aside class="col-md-12">
   <% @todoes.each do |todo| %>
-    <li>
+    <div class="clip-box-a">
       <%= link_to todo.content, todo_path(todo.id) %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</aside>
