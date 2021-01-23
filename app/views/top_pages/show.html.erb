@@ -20,3 +20,30 @@
   </aside>
 </div>
 
+<div id="heatmap"></div>
+<script>
+  var startDate = new Date();
+  startDate.setMonth(startDate.getMonth()-12);
+
+  var parser = function(data) {
+    return eval("(" + JSON.stringify(data) + ")");
+  };
+
+  var cal = new CalHeatMap();
+  cal.init({
+    itemSelector: "#heatmap",
+    data: "/api/records",
+    afterLoadData: parser,
+    cellSize: 15,
+    domain: "month",
+    subDomain: "day",
+    range: 13,
+    tooltip: false,
+    start: startDate,
+    domainLabelFormat: "%b",
+    legend: [1,2,3,4],
+    weekStartOnMonday: false,
+    legendVerticalPosition: "center",
+    legendOrientation: "vertical"
+  });
+</script>
