@@ -13,27 +13,37 @@ $(function () {
       clearTimeout(timeoutID);
       $('.js-alarm-btn').text('アラームを登録する');
     }else{
-      var repeat = ('起きてください。').repeat(1000);
-      var speakContent = new SpeechSynthesisUtterance(repeat);
-      var inputAlarmTimeStr = document.getElementById("alarmTime").value;
-      var alarmTime = Number(inputAlarmTimeStr.slice(0, 2)) * 3600 + Number(inputAlarmTimeStr.slice(-2)) * 60;
-      var currentDatetime = new Date();
-      var currentTime = currentDatetime.getHours() * 3600 + currentDatetime.getMinutes().toString().padStart(2, '0') * 60 + currentDatetime.getSeconds();
-      var restTime;
-      if (alarmTime > currentTime) {
-        restTime = (alarmTime - currentTime);
-      } else {
-        restTime = (24*3600 + alarmTime -currentTime)
-      }
-      var alarmGetTime = currentDatetime.getTime() + restTime*1000;
-      var speak = function(){
-        speechSynthesis.speak(speakContent);
-      };
-      var timeoutID;
-      timeoutID = setTimeout(speak, restTime*1000);
-      document.cookie = 'timeoutID=' + encodeURIComponent(timeoutID);
-      document.cookie = 'alarmGetTime=' + alarmGetTime;
-      $('.js-alarm-btn').text('アラームを解除する');
+      var contents = '';
+      $.ajax({
+        url: '/api/todoes',
+        type: 'GET',
+      }).done(function (data) {
+        for(var toDo of data){
+          contents += toDo["content"]+"を頑張りましょう。";
+        }
+        contents += "起きてください。"
+        var repeat = contents.repeat(1000);
+        var speakContent = new SpeechSynthesisUtterance(repeat);
+        var inputAlarmTimeStr = document.getElementById("alarmTime").value;
+        var alarmTime = Number(inputAlarmTimeStr.slice(0, 2)) * 3600 + Number(inputAlarmTimeStr.slice(-2)) * 60;
+        var currentDatetime = new Date();
+        var currentTime = currentDatetime.getHours() * 3600 + currentDatetime.getMinutes().toString().padStart(2, '0') * 60 + currentDatetime.getSeconds();
+        var restTime;
+        if (alarmTime > currentTime) {
+          restTime = (alarmTime - currentTime);
+        } else {
+          restTime = (24*3600 + alarmTime -currentTime)
+        }
+        var alarmGetTime = currentDatetime.getTime() + restTime*1000;
+        var speak = function(){
+          speechSynthesis.speak(speakContent);
+        };
+        var timeoutID;
+        timeoutID = setTimeout(speak, restTime*1000);
+        document.cookie = 'timeoutID=' + encodeURIComponent(timeoutID);
+        document.cookie = 'alarmGetTime=' + alarmGetTime;
+        $('.js-alarm-btn').text('アラームを解除する');
+        })
     }
     $('.js-alarm-btn').toggleClass('on');
   });
