@@ -139,6 +139,7 @@ aside {
 
 /* forms */
 
+
 input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
     width: 100%;
@@ -201,6 +202,94 @@ input, textarea, select, .uneditable-input {
       margin-bottom: 5px;
     }
   }
-  
 
+  /* 黒板風　1 */
+.kokuban-s1 {
+  position: relative;
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%; /* ボックス幅 */
+  background: #202020; /* ボックス背景色 */
+  color: #fff; /* 文章色 */
+  border: 7px solid #b2771f; /* 枠線 */
+  border-radius: 3px; /* 角の丸み */
+  box-shadow: 0 0 5px #333;
+ }
+ .kokuban-s1::before,
+ .kokuban-s1::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+ } 
+ .kokuban-s1::before {
+  width: 20px;
+  right: 10px;
+  border: solid 3px #ff42a0; /*チョーク（ピンク） */
+  border-radius: 3px 2px 0 2px;
+ }
+ .kokuban-s1::after {
+  width: 15px; 
+  right: 45px;
+  border: solid 3px #fff; /*チョーク（白） */
+  border-radius: 8px 5px 2px 5px;
+ }
+
+ /*　テープ　枠　4 */
+.kakomi-tape4 {
+  position:relative;
+  padding: 35px 20px 20px;
+  margin: 2.5em auto;
+  width: 90%;
+  color: #555555; /* 文字色 */
+  background-color: #e0ebaf; /*BOX背景色*/ 
+  box-shadow: 0 2px 5px #999;
+ }
+ .title-tape4 {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  padding: 4px 20px;
+  color: #555555; /*タイトル色*/
+  font-weight: bold;
+  background-color: rgba(255,255,255,.1);
+  border-left: 2px dotted rgba(0,0,0,.1);
+  border-right: 2px dotted rgba(0,0,0,.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
+  transform: rotate(-3deg);
+ }
+  
+/* メモ　クリップ　Ａ */
+.clip-box-a {
+  position: relative;
+  margin: 2em auto;
+  padding: 15px 35px 15px 25px;
+  width: 90%; /* ボックス幅 */
+  background-color: rgb(211, 248, 211); /* ボックス背景色 */
+  color: #555555; /* 文章色 */
+  border: 1px solid #ccc; /* 枠線 */
+  box-shadow: 1px 1px 1px #acacac; /* 影の色 */
+ }
+ .clip-box-a::before {
+  position: absolute;
+  content: '';
+  top: -15px;
+  right: 10px;
+  height: 55px;
+  width: 15px;
+  border: 3px solid #555555; /*クリップ色 */
+  background-color: none;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px #999;
+  transform: rotate(10deg);
+  z-index: 1;
+ }
+ .clip-box-a::after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  width: 10px; 
+  right: 20px;
+  border: solid 5px rgb(211, 248, 211); /*背景色と同じ色にする*/
+  z-index: 2;
+ }
   

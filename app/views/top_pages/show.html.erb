@@ -1,19 +1,19 @@
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <section class="micropost_form">
       <% if @user %>
         <h5>
           User:<%= @user %>
-          <%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
+          <br><%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
         </h5>
       <% else %>
         <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.label :user %>
           <%= f.text_field :user %>
           <%= f.submit "ユーザーを登録する" %>
         <% end %>
       <% end %>
-      
-      <label for="startTime">起床時刻: </label>
+      <label for="startTime">起床時刻 </label>
       <input type="time" id="alarmTime">
       <button class='js-create-alarm-btn'>アラームを登録する</button>
     </section>

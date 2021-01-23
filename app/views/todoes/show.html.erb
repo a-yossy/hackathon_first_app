@@ -1,11 +1,16 @@
-<h3>
-  Todo: <%= @todo.content %>
-</h3>
-<% if !@todo.memo.blank? %>
-  <h4>
-    メモ: <%= @todo.memo %>
-  </h4>
-<% end %>
+<aside class="col-md-5">
+  <div class="kokuban-s1">
+    <%= @todo.content %>
+  </div>
+  <% if !@todo.memo.blank? %>
+  <div class="kakomi-tape4">
+    <span class="title-tape4">
+      メモ
+    </span>
+      <%= @todo.memo %>
+    </div>
+  <% end %>
 
-<%= link_to "編集", edit_todo_path(@todo.id) %>
-<%= link_to "削除", todo_path(@todo.id), method: :delete, data: { confirm: '削除しますか？' } %>
+  <%= link_to "編集", edit_todo_path(@todo.id) %>
+  <%= link_to "削除", todo_path(@todo.id), method: :delete, data: { confirm: '削除しますか？' } %>
+</aside>
