@@ -1,16 +1,13 @@
 <div class="row">
   <aside class="col-md-4">
-    <section class="micropost_form">
-      <%= form_tag("/todoes/#{@todo.id}/update") do %>
-      <div class="field">
-        <%= label_tag :Todo %>
-        <%= text_field_tag :content, @todo.content %>
+    <%= form_tag("/todoes/#{@todo.id}/update") do %>
+      <%= label_tag :Todo %>
+      <%= text_field_tag :content, @todo.content %>
 
        <%= label_tag :メモ %>
        <%= text_area_tag :memo, @todo.memo %>
-      </div>
-      <%= submit_tag "更新" %>
+       
+       <%= submit_tag "更新", class: "btn btn-success" %>
     <% end %>
-    </section>
   </aside>
 </div>

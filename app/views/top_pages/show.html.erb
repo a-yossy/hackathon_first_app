@@ -1,6 +1,5 @@
 <div class="row">
   <aside class="col-md-3">
-    <section class="micropost_form">
       <% if @user %>
         <h5>
           User:<%= @user %>
@@ -10,7 +9,7 @@
         <%= form_for(:session, url: login_path) do |f| %>
           <%= f.label :user %>
           <%= f.text_field :user %>
-          <%= f.submit "ユーザーを登録する" %>
+          <%= f.submit "ユーザーを登録する", class: "btn btn-success"%>
         <% end %>
       <% end %>
       <label for="startTime">起床時刻 </label>
