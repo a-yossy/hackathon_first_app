@@ -26,15 +26,15 @@
   startDate.setMonth(startDate.getMonth()-12);
 
   var parser = function(data) {
-      return eval("(" + data + ")");
+    return eval("(" + JSON.stringify(data) + ")");
   };
 
   var cal = new CalHeatMap();
   cal.init({
     itemSelector: "#heatmap",
-    data: "/api/v1/records&start={{d:start}}&stop={{d:end}}",
+    data: "/api/records",
     afterLoadData: parser,
-    cellSize: 10,
+    cellSize: 15,
     domain: "month",
     subDomain: "day",
     range: 13,
