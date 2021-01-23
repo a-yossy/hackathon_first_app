@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/pavolzbell/cal-heatmap-rails.git
+  revision: 0a4c1adeb3f6e99737e3036371f25afeab2882a3
+  branch: master
+  specs:
+    cal-heatmap-rails (3.6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,6 +73,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    d3_rails (4.1.1)
+      railties (>= 3.1.0)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.14.2)
@@ -180,8 +189,10 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   byebug
+  cal-heatmap-rails!
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  d3_rails
   jbuilder (~> 2.5)
   jquery-rails
   puma (~> 3.7)
