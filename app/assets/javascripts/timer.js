@@ -13,7 +13,8 @@ $(function () {
       clearTimeout(timeoutID);
       $('.js-alarm-btn').text('アラームを登録する');
     }else{
-      var speakContent = new SpeechSynthesisUtterance('あいうえお');
+      var repeat = ('起きてください。').repeat(100);
+      var speakContent = new SpeechSynthesisUtterance(repeat);
       var inputAlarmTimeStr = document.getElementById("alarmTime").value;
       var alarmTime = Number(inputAlarmTimeStr.slice(0, 2)) * 3600 + Number(inputAlarmTimeStr.slice(-2)) * 60;
       var currentDatetime = new Date();
@@ -24,12 +25,9 @@ $(function () {
       } else {
         restTime = (24*3600 + alarmTime -currentTime)
       }
+      console.log(repeat);
       var speak = function(){
-        var number = 0;
-        while (number < 100) {
-          speechSynthesis.speak(speakContent);
-          number++;
-        }
+        speechSynthesis.speak(speakContent);
       };
       var timeoutID;
       timeoutID = setTimeout(speak, restTime*1000);
@@ -38,4 +36,10 @@ $(function () {
     }
     $('.js-alarm-btn').toggleClass('on');
   });
+});
+
+$(function () {
+  $('.js-stop-alarm-btn').on('click', function () {
+    speechSynthesis.cancel()
+  })
 });
