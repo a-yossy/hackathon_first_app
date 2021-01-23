@@ -9,11 +9,19 @@
   </head>
 
   <body>
-    <header>
-      <h1>
-        <%= link_to 'アラームアプリ', root_path %>
-      </h1>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to 'アラームアプリ', root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Todoリスト一覧", todoes_path %></li>
+            <li><%= link_to "Todoリスト作成", new_todo_path %></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

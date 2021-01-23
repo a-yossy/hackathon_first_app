@@ -25,7 +25,6 @@ $(function () {
       } else {
         restTime = (24*3600 + alarmTime -currentTime)
       }
-      console.log(repeat);
       var speak = function(){
         speechSynthesis.speak(speakContent);
       };
