@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post "todoes/:id/update" => "todoes#update"
   namespace :api do
     resources :records, only: %i[index]
-    resources :todoes, only: %i[index]
+    resources :todoes, only: %i[index create]
   end
 end

@@ -3,4 +3,9 @@ class Api::TodoesController < Api::ApplicationController
     data = Todo.all
     render json: data
   end
+
+  def create
+    score = params[:score]
+    Record.create!(score: score)
+  end
 end
