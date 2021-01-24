@@ -22,34 +22,9 @@
               <% end %>
             </li>
             <li>
-            <div class="userheader">
-
-
-            <% if @user %>
-            <h5>
-              User:<%= @user %><br><br>
-              <%= link_to logout_path, method: :delete do %>
-                <i class="fas fa-sign-out-alt"></i>ユーザー登録を解除する
-                </h5>
-              <% end %>
-        
-          <% else %>
-          <%= form_for(:session, url: login_path) do |f| %>
-            <div class="form-inline">
-    <div class="form-group">
-    <h5>
-            <label>User</label>
-            <%= f.text_field :user, :class => "form-control edit-form" %>
-            </div>
-            </div>
-
-            <%= button_tag :type => "submit" do %>
-              <i class="fas fa-user-check"></i>ユーザーを登録する
-            <% end %>
-            </h5>
-          <% end %>
-          <% end %>
-          </div>
+            <form onsubmit="return abc()">
+              <input type="text" id='userID' value="<%= @user %>">
+          </form>
             </li>
           </ul>
         </h3>
