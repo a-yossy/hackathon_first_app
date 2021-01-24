@@ -1,7 +1,12 @@
-<aside class="col-md-12">
-  <% @todoes.each do |todo| %>
-    <div class="clip-box-a">
-      <%= link_to todo.content, todo_path(todo.id) %>
-    </div>
-  <% end %>
-</aside>
+<div class="container">
+  <div class="bg_test">
+    <aside class="col-md-12">
+      <% @todoes.each do |todo| %>
+        <div class="clip-box-a">
+          <%= link_to todo.content, todo_path(todo.id), :style=>"color: #42a82e;" %>
+        </div>
+      <% end %>
+      <%= will_paginate %>
+    </aside>
+  </div>
+</div>

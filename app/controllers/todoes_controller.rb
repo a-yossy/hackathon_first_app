@@ -1,7 +1,7 @@
 class TodoesController < ApplicationController
 
   def index
-    @todoes = Todo.all
+    @todoes = Todo.paginate(page: params[:page], per_page: 5)
   end
 
   def new

@@ -1,20 +1,23 @@
-<aside class="col-md-5">
-  <div class="kokuban-s1">
-    <%= @todo.content %>
+<div class="container">
+  <div class="bg_test">
+    <aside class="col-md-5">
+      <div class="kokuban-s1">
+        <%= @todo.content %>
+      </div>
+      <% if !@todo.memo.blank? %>
+        <div class="kakomi-tape4">
+          <span class="title-tape4">メモ</span>
+          <%= @todo.memo %>
+        </div>
+      <% end %>
+      <div class="edit-icons">
+        <%= link_to edit_todo_path(@todo.id) do %>
+          <i class="far fa-edit fa-2x"></i>編集
+        <% end %>
+        <%= link_to todo_path(@todo.id), method: :delete, data:{confirm:"削除しますか？"} do %>
+          <i class="far fa-trash-alt fa-2x"></i>削除
+        <% end %>
+      </div>
+    </aside>
   </div>
-  <% if !@todo.memo.blank? %>
-    <div class="kakomi-tape4">
-      <span class="title-tape4">メモ</span>
-      <%= @todo.memo %>
-    </div>
-  <% end %>
-
-  <div class="edit-icons">
-    <%= link_to edit_todo_path(@todo.id) do %>
-      <i class="far fa-edit fa-2x"></i>編集
-    <% end %>
-    <%= link_to todo_path(@todo.id), method: :delete, data:{confirm:"削除しますか？"} do %>
-      <i class="far fa-trash-alt fa-2x"></i>削除
-    <% end %>
-  </div>
-</aside>
+</div>

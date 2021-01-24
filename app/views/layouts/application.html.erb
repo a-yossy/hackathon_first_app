@@ -17,14 +17,25 @@
         <%= link_to 'アラームアプリ', root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Todoリスト一覧", todoes_path %></li>
-            <li><%= link_to "Todoリスト作成", new_todo_path %></li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fas fa-clock"></i>目覚まし時計
+              <% end %>
+            </li>
+            <li>
+              <%= link_to todoes_path do %>
+                <i class="fas fa-list"></i>Todoリスト一覧
+              <% end %>  
+            </li>
+            <li>
+              <%= link_to new_todo_path do %>
+                <i class="fas fa-pen-alt"></i>Todoリスト作成
+              <% end %>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

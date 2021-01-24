@@ -13,8 +13,22 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-/* font-awesome*/
+.bg_test {
+  height: 550px;                  /* 高さ指定 */
+  padding:  20px;                 /* 余白指定 */
+  margin: 6px;
+  background-color: rgb(226, 255, 228);   /* 背景色指定 */
+}
 
+.cover{
+  background-image:  image-url('aozora.jpg');
+  background-size:  cover;
+}
+
+.picture{
+  width: 1280px;
+  margin: 0 auto;
+}
 
 /* universal */
 
@@ -245,10 +259,11 @@ input, textarea, select, .uneditable-input {
   padding: 35px 20px 20px;
   margin: 2.5em auto;
   width: 90%;
-  color: #555555; /* 文字色 */
-  background-color: #e0ebaf; /*BOX背景色*/ 
+  color: #383838; /* 文字色 */
+  background-color: #7ee46a; /*BOX背景色*/ 
   box-shadow: 0 2px 5px #999;
  }
+ 
  .title-tape4 {
   position: absolute;
   top: -15px;
@@ -269,8 +284,9 @@ input, textarea, select, .uneditable-input {
   margin: 2em auto;
   padding: 15px 35px 15px 25px;
   width: 90%; /* ボックス幅 */
-  background-color: rgb(211, 248, 211); /* ボックス背景色 */
+  background-color: #fff; /* ボックス背景色 */
   color: #555555; /* 文章色 */
+  font-weight: bold;
   border: 1px solid #ccc; /* 枠線 */
   box-shadow: 1px 1px 1px #acacac; /* 影の色 */
  }
@@ -294,7 +310,7 @@ input, textarea, select, .uneditable-input {
   top: 0px;
   width: 10px; 
   right: 20px;
-  border: solid 5px rgb(211, 248, 211); /*背景色と同じ色にする*/
+  border: solid 5px #fff; /*背景色と同じ色にする*/
   z-index: 2;
  }
   
