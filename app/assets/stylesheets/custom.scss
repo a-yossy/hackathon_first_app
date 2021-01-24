@@ -38,13 +38,21 @@ $gray-medium-light: #eaeaea;
   margin: 0 auto;
 }
 
+.yohaku{
+  margin: 10px;
+}
+
 .userheader{
   input[type="text"] {
     width: 300px;
     height: 1px;
 }
+}
 
-
+.centering_parent {
+  padding: 20px;              /* 余白指定 */
+  text-align:  center;        /* 中央寄せ */
+  height: 100px;              /* 高さ指定 */
 }
 
 /* universal */
