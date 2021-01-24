@@ -1,23 +1,33 @@
-<div class="row">
-  <aside class="col-md-3">
-      <% if @user %>
-        <h5>
-          User:<%= @user %>
-          <br><%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
-        </h5>
-      <% else %>
-        <%= form_for(:session, url: login_path) do |f| %>
-          <%= f.label :user %>
-          <%= f.text_field :user %>
-          <%= f.submit "ユーザーを登録する", class: "btn btn-success"%>
+<div class="picture">
+  <%= image_tag("picture.png", alt: "Alarm App") %>
+</div>
+
+<div class="container">
+  <div class="bg_test">
+    <div class="row">
+      <aside class="col-md-3">
+        <% if @user %>
+          <h5>
+            User:<%= @user %><br><br>
+            <%= link_to logout_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt"></i>ユーザー登録を解除する
+            <% end %>
+          </h5>
+        <% else %>
+          <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.label :user %>
+            <%= f.text_field :user %>
+
+            <%= f.submit "ユーザーを登録する", class: "btn btn-success"%>
+          <% end %>
         <% end %>
-      <% end %>
-      <label for="startTime">起床時刻 </label>
-      <input type="time" id="alarmTime">
-      <button class='js-alarm-btn'>アラームを登録する</button>
-      <button class='js-stop-alarm-btn'>アラームを止める</button>
-    </section>
-  </aside>
+        <br>
+        <label for="startTime">起床時刻 </label>
+        <input type="time" id="alarmTime">
+        <button class='js-create-alarm-btn'>アラームを登録する</button>
+      </aside>
+    </div>
+  </div>
 </div>
 
 <div id="heatmap"></div>

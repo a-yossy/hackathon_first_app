@@ -1,13 +1,17 @@
-<div class="row">
-  <aside class="col-md-4">
-    <%= form_tag("/todoes/#{@todo.id}/update") do %>
-      <%= label_tag :Todo %>
-      <%= text_field_tag :content, @todo.content %>
+<div class="container">
+  <div class="bg_test">
+    <div class="row">
+      <aside class="col-md-4">
+        <%= form_tag("/todoes/#{@todo.id}/update") do %>
+          <%= label_tag :Todo %>
+          <%= text_field_tag :content, @todo.content %>
 
-       <%= label_tag :メモ %>
-       <%= text_area_tag :memo, @todo.memo %>
+          <%= label_tag :メモ %>
+          <%= text_area_tag :memo, @todo.memo %>
        
-       <%= submit_tag "更新", class: "btn btn-success" %>
-    <% end %>
-  </aside>
+          <%= submit_tag "更新", class: "btn btn-success" %>
+        <% end %>
+      </aside>
+    </div>
+  </div>
 </div>
