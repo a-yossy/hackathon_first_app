@@ -43,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
 end
 
 group :development do
@@ -54,9 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jquery-rails"
 
-group :development, :test do
-  gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
-end
+
 
 group :production do
   gem 'pg'
