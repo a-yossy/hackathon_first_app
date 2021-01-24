@@ -51,7 +51,17 @@ $(function () {
 
 $(function () {
   $('.js-stop-alarm-btn.btn.btn-success.btn-block').on('click', function () {
-    var url = "https://kenkoooo.com/atcoder/atcoder-api/results?user=yuya333"
+    var cookies = document.cookie; 
+    var cookiesArray = cookies.split(';'); 
+    var userID;
+    for(var for_cookie of cookiesArray){ 
+      var split_cookie = for_cookie.split('=');
+      if (split_cookie[0] === ' user') {
+        userID = split_cookie[1];
+      }
+    }
+    var url = "https://kenkoooo.com/atcoder/atcoder-api/results?user=" + userID;
+    console.log(url);
     fetch(url)
     .then(function (data) {
       return data.json(); 
