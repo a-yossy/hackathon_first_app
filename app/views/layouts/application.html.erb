@@ -14,14 +14,17 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to 'アラームアプリ', root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
+        <h3>
+          <ul class="nav navbar-nav">
             <li>
               <%= link_to root_path do %>
-                <i class="fas fa-clock"></i>目覚まし時計
+                <i class="fas fa-clock"></i>ACアラーム
               <% end %>
             </li>
+          </ul>
+        </h3>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
             <li>
               <%= link_to todoes_path do %>
                 <i class="fas fa-list"></i>Todoリスト一覧
