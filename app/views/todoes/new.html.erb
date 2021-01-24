@@ -1,7 +1,8 @@
 <div class="container">
   <div class="bg_test">
+  <div class="centering_parent">
     <div class="row">
-      <aside class="col-md-4">
+      <aside class="col-md-4 col-md-offset-4">
         <%= form_tag('/todoes', method: :post) do %>
           <%= label_tag :Todo %>
           <%= text_field_tag :content %>
@@ -12,6 +13,7 @@
           <%= submit_tag "作成", class: "btn btn-success" %>
         <% end %>
       </aside>
+    </div>
     </div>
   </div>
 </div>
