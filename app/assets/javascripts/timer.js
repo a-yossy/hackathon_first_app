@@ -1,6 +1,6 @@
 $(function () {
-  $('.js-alarm-btn').on('click', function () {
-    if($('.js-alarm-btn').hasClass('on')){
+  $('.js-alarm-btn.btn.btn-success.btn-block').on('click', function () {
+    if($('.js-alarm-btn.btn.btn-success.btn-block').hasClass('on')){
       var cookies = document.cookie; 
       var cookiesArray = cookies.split(';'); 
       var timeoutID;
@@ -11,7 +11,7 @@ $(function () {
           }
       }
       clearTimeout(timeoutID);
-      $('.js-alarm-btn').text('アラームを登録する');
+      $('.js-alarm-btn.btn.btn-success.btn-block').text('アラームを登録する');
     }else{
       var contents = '';
       $.ajax({
@@ -42,15 +42,15 @@ $(function () {
         timeoutID = setTimeout(speak, restTime*1000);
         document.cookie = 'timeoutID=' + encodeURIComponent(timeoutID);
         document.cookie = 'alarmGetTime=' + alarmGetTime;
-        $('.js-alarm-btn').text('アラームを解除する');
+        $('.js-alarm-btn.btn.btn-success.btn-block').text('アラームを解除する');
         })
     }
-    $('.js-alarm-btn').toggleClass('on');
+    $('.js-alarm-btn.btn.btn-success.btn-block').toggleClass('on');
   });
 });
 
 $(function () {
-  $('.js-stop-alarm-btn').on('click', function () {
+  $('.js-stop-alarm-btn.btn.btn-success.btn-block').on('click', function () {
     var url = "https://kenkoooo.com/atcoder/atcoder-api/results?user=yuya333"
     fetch(url)
     .then(function (data) {
