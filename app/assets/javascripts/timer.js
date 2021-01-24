@@ -17,7 +17,7 @@ $(function () {
       $.ajax({
         url: '/api/todoes',
         type: 'GET',
-      }).done(function (data) {
+      }).then(function (data) {
         for(var toDo of data){
           contents += toDo["content"]+"を頑張りましょう。";
         }
@@ -78,7 +78,17 @@ $(function () {
           }
       }
       if (Number(alarmGetTime) < Number(acTime)*1000) {
-        speechSynthesis.cancel();
+        var score = Number(acTime)*1000 - Number(alarmGetTime);
+        $.ajax({
+          url: 'api/todoes',
+          type: 'POST',
+          data: {
+            score: score,
+            method: 'POST'
+          }
+        }).then(function () {
+          speechSynthesis.cancel();
+        });
       }
     });
   })

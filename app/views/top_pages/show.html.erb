@@ -2,7 +2,9 @@
   <aside class="col-md-3">
       <% if @user %>
         <h5>
-          User:<%= @user %>
+          <div id="userID" value="#{@user}">
+            User:<%= @user %>
+          </div>
           <br><%= link_to "ユーザー登録を解除する", logout_path, method: :delete %>
         </h5>
       <% else %>
