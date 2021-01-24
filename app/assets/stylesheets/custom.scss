@@ -25,7 +25,6 @@ $gray-medium-light: #eaeaea;
   height: 650px;                  /* 高さ指定 */
   width: 1250px;
   padding:  20px;                 /* 余白指定 */
-  margin: 6px;
   background-color: rgb(226, 255, 228);   /* 背景色指定 */
 }
 
@@ -37,6 +36,15 @@ $gray-medium-light: #eaeaea;
 .picture{
   width: 1280px;
   margin: 0 auto;
+}
+
+.userheader{
+  input[type="text"] {
+    width: 300px;
+    height: 1px;
+}
+
+
 }
 
 /* universal */
