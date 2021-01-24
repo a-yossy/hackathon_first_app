@@ -16,7 +16,6 @@ $gray-medium-light: #eaeaea;
 .bg_test {
   height: 550px;                  /* 高さ指定 */
   padding:  20px;                 /* 余白指定 */
-  margin: 6px;
   background-color: rgb(226, 255, 228);   /* 背景色指定 */
 }
 
@@ -28,6 +27,15 @@ $gray-medium-light: #eaeaea;
 .picture{
   width: 1280px;
   margin: 0 auto;
+}
+
+.userheader{
+  input[type="text"] {
+    width: 300px;
+    height: 1px;
+}
+
+
 }
 
 /* universal */

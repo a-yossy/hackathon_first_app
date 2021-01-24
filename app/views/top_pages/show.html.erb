@@ -6,22 +6,6 @@
   <div class="bg_test">
     <div class="row">
       <aside class="col-md-3">
-        <% if @user %>
-          <h5>
-            User:<%= @user %><br><br>
-            <%= link_to logout_path, method: :delete do %>
-              <i class="fas fa-sign-out-alt"></i>ユーザー登録を解除する
-            <% end %>
-          </h5>
-        <% else %>
-          <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.label :user %>
-            <%= f.text_field :user %>
-
-            <%= f.submit "ユーザーを登録する", class: "btn btn-success"%>
-          <% end %>
-        <% end %>
-        <br>
         <label for="startTime">起床時刻 </label>
         <input type="time" id="alarmTime">
         <button class='js-alarm-btn btn btn-success btn-block'>アラームを登録する</button>
