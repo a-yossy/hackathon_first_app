@@ -26,6 +26,7 @@ $gray-medium-light: #eaeaea;
   width: 1250px;
   padding:  20px;                 /* 余白指定 */
   background-color: rgb(226, 255, 228);   /* 背景色指定 */
+  margin-top: 30px;
 }
 
 .cover{
@@ -246,6 +247,13 @@ input, textarea, select, .uneditable-input {
       margin-bottom: 5px;
     }
   }
+
+.heatmap {
+  padding-top: 200px;
+}
+
+
+
 
   /* 黒板風　1 */
 .kokuban-s1 {

@@ -6,7 +6,7 @@ $(function () {
       var timeoutID;
       for(var for_cookie of cookiesArray){ 
           var split_cookie = for_cookie.split('=');
-          if (split_cookie[0] === 'timeoutID') {
+          if (split_cookie[0].trim() === 'timeoutID') {
             timeoutID = split_cookie[1];
           }
       }
@@ -56,12 +56,12 @@ $(function () {
     var userID;
     for(var for_cookie of cookiesArray){ 
       var split_cookie = for_cookie.split('=');
-      if (split_cookie[0] === ' user') {
+      if (split_cookie[0].trim() === 'user') {
         userID = split_cookie[1];
       }
     }
     var url = "https://kenkoooo.com/atcoder/atcoder-api/results?user=" + userID;
-    console.log(url);
+    console.log(userID);
     fetch(url)
     .then(function (data) {
       return data.json(); 
@@ -83,7 +83,7 @@ $(function () {
       var alarmGetTime;
       for(var for_cookie of cookiesArray){ 
           var split_cookie = for_cookie.split('=');
-          if (split_cookie[0] === ' alarmGetTime') {
+          if (split_cookie[0].trim() === 'alarmGetTime') {
             alarmGetTime = split_cookie[1];
           }
       }
