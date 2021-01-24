@@ -13,8 +13,17 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+.container {
+  width: 1250px;
+  margin-right: 10;
+  margin-left: 10;
+  padding-right: 15;
+  padding-left: 10;
+}
+
 .bg_test {
-  height: 550px;                  /* 高さ指定 */
+  height: 650px;                  /* 高さ指定 */
+  width: 1250px;
   padding:  20px;                 /* 余白指定 */
   margin: 6px;
   background-color: rgb(226, 255, 228);   /* 背景色指定 */
