@@ -26,8 +26,5 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: ac_alarm_database
-  username: yoshioka
-  password: password
 
   
