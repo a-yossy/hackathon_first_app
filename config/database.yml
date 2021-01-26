@@ -25,3 +25,4 @@ production:
   database: ac_alarm_database
   username: yoshioka
   password: password
+  adapter: postgresql
