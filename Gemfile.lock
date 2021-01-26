@@ -193,12 +193,12 @@ DEPENDENCIES
   font_awesome5_rails
   jbuilder (~> 2.5)
   jquery-rails
-  pg (= 0.20.0)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.6)
   sass-rails (~> 5.0)
   selenium-webdriver
-  sqlite3 (= 1.3.13)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
