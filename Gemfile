@@ -55,7 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jquery-rails"
 
-gem 'sqlite3', groups: %w(test development), require: false
+gem 'sqlite3', '1.3.13', groups: %w(test development), require: false
 gem 'pg', groups: %w(production), require: false
 
 
