@@ -21,10 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-#半角スペース２個分の空白を開ける
-  <<: *default
   adapter: postgresql
-  encoding: unicode
+  database: ac_database_production
   pool: 5
+  timeout: 5000
+  encoding: unicode
 
   
