@@ -23,6 +23,6 @@ test:
 production:
 #半角スペース２個分の空白を開ける
   <<: *default
-  adapter: postgresql
+  adapter: db/production.postgresql
   encoding: unicode
   pool: 5
